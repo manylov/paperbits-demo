@@ -1,8 +1,8 @@
 :root {
     // Grid proportions
-    --grid-width: 960;
-    --grid-column-width: 60;
+    --grid-width: 1140;
     --grid-cells: 12;
+    --grid-column-width: calc(var(--grid-width) / var(--grid-cells));
 
     // Grid logic
     --grid-gutters: calc(var(--grid-cells) - 1);
@@ -19,17 +19,17 @@
     // Container Width
     --container-width: 80vw;
 
-    @media (min-width: 1000px) {
-        :root {
-            --container-width: 90vw;
-        }
-    }
+    // @media (min-width: 1000px) {
+    //     :root {
+    //         --container-width: 90vw;
+    //     }
+    // }
 
-    @media (min-width: 1400px) {
-        :root {
-            --container-width: 1300px;
-        }
-    }
+    // @media (min-width: 1400px) {
+    //     :root {
+    //         --container-width: 1300px;
+    //     }
+    // }
 }
 
 $cells: 11;
@@ -82,6 +82,9 @@ $breakpoints: (
     border: 1px dashed #ccc;
     text-align: center;
     position: relative;
+    // width: 100px;
+    // height: 100px;;
+    // position: fixed;
 }
 
 .resize-handle {
@@ -89,7 +92,7 @@ $breakpoints: (
     border-radius: 50%;
     width: 15px;
     height: 15px;
-    background: #00AFEF;
+    background: #00afef;
 
     &.resize-handle-top {
         top: 0;
@@ -116,10 +119,10 @@ $breakpoints: (
     }
 }
 
-.container {
+.container2 {
     display: grid;
-    grid-template-columns: repeat(12, var(--column-unit));
-    grid-template-rows: repeat(12, var(--column-unit));
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     height: 500px;
 }
 
@@ -160,3 +163,4 @@ $breakpoints: (
         }
     }
 }
+
