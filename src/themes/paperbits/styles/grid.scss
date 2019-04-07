@@ -122,6 +122,7 @@ $breakpoints: (
     grid-template-columns: repeat(12, 6vw);
     grid-template-rows: repeat(12, 6vw);
     margin: auto;
+    max-width: 1140px;
 }
 
 .grid {
