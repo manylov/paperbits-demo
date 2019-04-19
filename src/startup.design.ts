@@ -16,6 +16,7 @@ import { StylingEditModule } from "@paperbits/styles/styles.edit.module";
 import { ProseMirrorModule } from "@paperbits/prosemirror/prosemirror.module";
 import { OfflineModule } from "@paperbits/common/persistence/offline.module";
 import { DemoEditModule } from "./components/demo.edit.module";
+import { YourWidgetModule } from "./components/your-widget/vue/yourWidget.module";
 
 /* Uncomment to enable Firebase module */
 // import { FirebaseModule } from "@paperbits/firebase/firebase.module";
@@ -27,6 +28,8 @@ injector.bindModule(new EmailsDesignModule());
 injector.bindModule(new StylingEditModule());
 injector.bindModule(new ProseMirrorModule());
 injector.bindModule(new DemoEditModule());
+
+injector.bindModule(new YourWidgetModule());
 
 /* Uncomment to enable Firebase module */
 // injector.bindModule(new FirebaseModule());
