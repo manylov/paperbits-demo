@@ -5,4 +5,8 @@ import { Component } from "@paperbits/common/vue/decorators";
     selector: "your-widget",
     template: template
 })
-export class YourWidgetViewModel { }
+export class YourWidgetViewModel {
+    constructor() {
+        console.log("Hello from Vue");
+    }
+}
