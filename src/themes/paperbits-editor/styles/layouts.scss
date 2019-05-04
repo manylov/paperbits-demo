@@ -138,11 +138,11 @@ widget {
     padding: 0;
     line-height: 0;
     width: 120px;
-    cursor: pointer;
     white-space: nowrap;
 
     &:hover {
         @include selection(15px, -5px);
+        cursor: pointer;
     }
 }
 

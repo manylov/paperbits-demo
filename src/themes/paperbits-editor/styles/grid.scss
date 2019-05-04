@@ -82,6 +82,7 @@ $breakpoints: (
     border: 1px dashed #ccc;
     text-align: center;
     position: relative;
+    overflow: auto;
 }
 
 .resize-handle {
@@ -124,15 +125,6 @@ $breakpoints: (
     margin: auto;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(12, 10px);
-    grid-template-rows: repeat(12, 10px);
-    width: 120px;
-    height: 120px;
-
-}
-
 @each $breakpoint, $breakpoint-viewport in $breakpoints {
     @media (min-width: $breakpoint-viewport) {
         @for $i from 1 through $cells {
@@ -171,3 +163,24 @@ $breakpoints: (
     }
 }
 
+.snippet-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 10px);
+    grid-template-rows: repeat(12, 10px);
+    // width: 120px;
+    // height: 120px;
+    margin: 5px;
+
+    &:hover {
+        @include selection(15px, -5px);
+        cursor: pointer;
+    }
+}
+
+.snippet-grid-cell {
+    background: #ccc;
+    outline: 1px solid gray;
+    min-width: 20px;
+    min-height: 20px;
+    margin: 2px;
+}
