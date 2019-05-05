@@ -167,9 +167,8 @@ $breakpoints: (
     display: grid;
     grid-template-columns: repeat(12, 10px);
     grid-template-rows: repeat(12, 10px);
-    // width: 120px;
-    // height: 120px;
     margin: 5px;
+    width: 80px;
 
     &:hover {
         @include selection(15px, -5px);
