@@ -177,9 +177,12 @@ $breakpoints: (
 }
 
 .snippet-grid-cell {
-    background: #ccc;
+    background: #d9d9d9;
     outline: 1px solid gray;
-    min-width: 20px;
+    min-width: 15px;
     min-height: 20px;
     margin: 2px;
+    &[role=article] {
+        background: #bfbfbf
+    }
 }
