@@ -1,7 +1,7 @@
 @import "styles.scss";
 
 $style-guide-font-family: "Arial";
-$style-guide-font-size: 14px;
+$style-guide-font-size: 12px;
 $style-guide-color: #000;
 
 @mixin pseudo-transparent-bckg {
@@ -32,6 +32,12 @@ $style-guide-color: #000;
             }
         }
 
+        &.style-card-framed {
+            padding: 20px 20px;
+            min-width: 100px;
+            text-align: center;
+        }
+
         * {
             pointer-events: none;
         }
@@ -39,7 +45,7 @@ $style-guide-color: #000;
         .style-card-label {
             text-align: center;
             display: block;
-
+            font-style: italic;
             font-size: $style-guide-font-size;
             font-family: $style-guide-font-family;
             padding: 5px;
@@ -84,17 +90,14 @@ $style-guide-color: #000;
     }
 
     .font {
-        border: 1px solid #ededed;
-        padding: 20px 30px;
         display: inline-block;
-        min-width: 100px;
         text-align: center;
         margin: 5px;
 
         .font-sample {
             padding: 0;
             margin: 0;
-            font-size: 20px;
+            font-size: 40px;
         }
 
         .font-name {
