@@ -1,10 +1,10 @@
 import { YourWidgetViewModel } from "./yourWidgetViewModel";
-import { IViewModelBinder } from "@paperbits/common/widgets";
+import { ViewModelBinder } from "@paperbits/common/widgets";
 import { YourWidgetModel } from "../yourWidgetModel";
 import { IEventManager } from "@paperbits/common/events";
 import { IWidgetBinding } from "@paperbits/common/editing";
 
-export class YourWidgetViewModelBinder implements IViewModelBinder<YourWidgetModel, YourWidgetViewModel>  {
+export class YourWidgetViewModelBinder implements ViewModelBinder<YourWidgetModel, YourWidgetViewModel>  {
     constructor(private readonly eventManager: IEventManager) { }
 
     public modelToViewModel(model: YourWidgetModel, viewModel?: YourWidgetViewModel): YourWidgetViewModel {
