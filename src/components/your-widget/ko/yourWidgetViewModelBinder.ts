@@ -7,7 +7,7 @@ import { IWidgetBinding } from "@paperbits/common/editing";
 export class YourWidgetViewModelBinder implements ViewModelBinder<YourWidgetModel, YourWidgetViewModel>  {
     constructor(private readonly eventManager: IEventManager) { }
 
-    public modelToViewModel(model: YourWidgetModel, viewModel?: YourWidgetViewModel): YourWidgetViewModel {
+    public async modelToViewModel(model: YourWidgetModel, viewModel?: YourWidgetViewModel): Promise<YourWidgetViewModel> {
         if (!viewModel) {
             viewModel = new YourWidgetViewModel();
         }

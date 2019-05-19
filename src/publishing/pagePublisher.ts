@@ -1,8 +1,8 @@
 import * as ko from "knockout";
 import * as Utils from "@paperbits/common/utils";
+import * as Objects from "@paperbits/common/objects";
 import template from "../themes/paperbits/assets/page.html";
 import { IPublisher } from "@paperbits/common/publishing";
-import { IRouteHandler } from "@paperbits/common/routing";
 import { IBlobStorage } from "@paperbits/common/persistence";
 import { IPageService, PageContract } from "@paperbits/common/pages";
 import { ISiteService, SettingsContract } from "@paperbits/common/sites";
@@ -11,7 +11,15 @@ import { MetaDataSetter } from "@paperbits/common/meta";
 import { MediaService, MediaContract } from "@paperbits/common/media";
 import { ISettingsProvider } from "@paperbits/common/configuration";
 import { createDocument } from "@paperbits/core/ko/knockout-rendering";
+import { Contract } from "@paperbits/common";
 
+
+// export class StyleRenderer {
+//     public render(pageContentContract: Contract): Promise<void> {
+//         const instanceClasses = Objects.findObjects(pageContentContract, (node) => node["instance"]);
+//         // pageContentContract.nodes
+//     }
+// }
 
 export class PagePublisher implements IPublisher {
     constructor(
@@ -29,6 +37,11 @@ export class PagePublisher implements IPublisher {
 
     private async renderPage(page: PageContract, settings: SettingsContract, iconMedia: MediaContract, imageMedia: MediaContract): Promise<{ permalink, bytes }> {
         console.log(`Publishing page ${page.title}...`);
+
+        // const instanceClasses = Objects.findObjects(page, (node) => node["instance"]);
+
+
+
 
         const templateDocument = createDocument(template);
 
