@@ -14,13 +14,6 @@ import { createDocument } from "@paperbits/core/ko/knockout-rendering";
 import { Contract } from "@paperbits/common";
 
 
-// export class StyleRenderer {
-//     public render(pageContentContract: Contract): Promise<void> {
-//         const instanceClasses = Objects.findObjects(pageContentContract, (node) => node["instance"]);
-//         // pageContentContract.nodes
-//     }
-// }
-
 export class PagePublisher implements IPublisher {
     constructor(
         private readonly pageService: IPageService,
@@ -37,11 +30,6 @@ export class PagePublisher implements IPublisher {
 
     private async renderPage(page: PageContract, settings: SettingsContract, iconMedia: MediaContract, imageMedia: MediaContract): Promise<{ permalink, bytes }> {
         console.log(`Publishing page ${page.title}...`);
-
-        // const instanceClasses = Objects.findObjects(page, (node) => node["instance"]);
-
-
-
 
         const templateDocument = createDocument(template);
 
@@ -106,11 +94,6 @@ export class PagePublisher implements IPublisher {
         for (const page of pages) {
             results.push(renderAndUpload(page));
         }
-
-        // for (const page of pages) {
-        //     const pageRenderResult = await this.renderPage(page, settings, iconFile, imageFile);
-        //     results.push(this.outputBlobStorage.uploadBlob(pageRenderResult.permalink, pageRenderResult.bytes, "text/html"));
-        // }
 
         await Promise.all(results);
     }

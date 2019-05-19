@@ -70,8 +70,8 @@ export class BlogPublisher implements IPublisher {
             iconFile = await this.mediaService.getMediaByKey(settings.site.faviconSourceKey);
         }
 
-        const renderAndUpload = async (page): Promise<void> => {
-            const pageRenderResult = await this.renderBlogPost(page, settings, iconFile);
+        const renderAndUpload = async (post): Promise<void> => {
+            const pageRenderResult = await this.renderBlogPost(post, settings, iconFile);
             await this.outputBlobStorage.uploadBlob(pageRenderResult.name, pageRenderResult.bytes, "text/html");
         };
 
