@@ -9,7 +9,6 @@
 
 import * as Utils from "@paperbits/common/utils";
 import { IBlobStorage } from "@paperbits/common/persistence";
-import { ProgressPromise } from "@paperbits/common";
 
 
 /**
@@ -24,8 +23,8 @@ export class StaticBlobStorage implements IBlobStorage {
      * @param content 
      * @param contentType 
      */
-    public async uploadBlob(blobKey: string, content: Uint8Array, contentType?: string): ProgressPromise<void> {
-        return new ProgressPromise<void>((resolve, reject, progress) => {
+    public async uploadBlob(blobKey: string, content: Uint8Array, contentType?: string): Promise<void> {
+        return new Promise<void>((resolve, reject) => {
             this.storageDataObject[blobKey] = {
                 contentType: contentType,
                 content: content
