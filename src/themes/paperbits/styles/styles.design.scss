@@ -224,3 +224,19 @@ $style-guide-color: #000;
         background: #bfbfbf;
     }
 }
+
+.snippet-grid-column-line {
+    width: 3px;
+    border-left: 3px dotted #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.snippet-grid-row-line {
+    height:  3px;
+    border-top: 3px dotted #000;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
