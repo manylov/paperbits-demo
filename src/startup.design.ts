@@ -9,24 +9,24 @@
 import "./polyfills";
 import * as ko from "knockout";
 import { InversifyInjector } from "@paperbits/common/injection";
-import { CoreEditModule } from "@paperbits/core/core.edit.module";
-import { FormsEditModule } from "@paperbits/forms/forms.edit.module";
+import { CoreDesignModule } from "@paperbits/core/core.design.module";
+import { FormsDesignModule } from "@paperbits/forms/forms.design.module";
 import { EmailsDesignModule } from "@paperbits/emails/emails.design.module";
-import { StylingEditModule } from "@paperbits/styles/styles.edit.module";
+import { StylesDesignModule } from "@paperbits/styles/styles.design.module";
 import { ProseMirrorModule } from "@paperbits/prosemirror/prosemirror.module";
 import { OfflineModule } from "@paperbits/common/persistence/offline.module";
-import { DemoEditModule } from "./components/demo.edit.module";
+import { DemoDesignModule } from "./components/demo.design.module";
 
 /* Uncomment to enable Firebase module */
 // import { FirebaseModule } from "@paperbits/firebase/firebase.module";
 
 const injector = new InversifyInjector();
-injector.bindModule(new CoreEditModule());
-injector.bindModule(new FormsEditModule());
+injector.bindModule(new CoreDesignModule());
+injector.bindModule(new FormsDesignModule());
 injector.bindModule(new EmailsDesignModule());
-injector.bindModule(new StylingEditModule());
+injector.bindModule(new StylesDesignModule());
 injector.bindModule(new ProseMirrorModule());
-injector.bindModule(new DemoEditModule());
+injector.bindModule(new DemoDesignModule());
 
 /* Uncomment to enable Firebase module */
 // injector.bindModule(new FirebaseModule());
